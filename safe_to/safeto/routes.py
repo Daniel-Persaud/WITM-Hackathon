@@ -19,7 +19,7 @@ def about():
 def new_report():
     form = ReportForm()
     if form.validate_on_submit():
-        post = Post(title=form.title.data, content=form.content.data)
+        post = Post(title=form.title.data, location=form.location.data, content=form.content.data)
         db.session.add(post)
         db.session.commit()
         flash('Your report has been submitted!', 'success')
@@ -39,12 +39,14 @@ def update_report(report_id):
     if form.validate_on_submit():
         post.title = form.title.data
         post.content = form.content.data
+        post.location = form.location.data
         db.session.commit()
         flash('Your post has been updated!', 'success')
         return redirect(url_for('report', report_id=post.id))
     elif request.method == 'GET':
         form.title.data = post.title
         form.content.data = post.content
+        form.location.data = post.location
     return render_template('create_report.html', title='Update Report',
                            form=form, legend='Update Report')
 
