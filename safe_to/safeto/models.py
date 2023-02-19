@@ -1,12 +1,12 @@
 from datetime import datetime
 from safeto import db
 
-class Post(db.Model):
+class Report(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.now)
+    category = db.Column(db.String(100), nullable=False)
+    date_reported = db.Column(db.DateTime, nullable=False, default=datetime.now)
     location = db.Column(db.Text, nullable=False)
-    content = db.Column(db.Text, nullable=False)
+    description = db.Column(db.Text, nullable=False)
 
     def __repr__(self):
-        return f"Post('{self.title}', '{self.date_posted}')"
+        return f"Report('{self.category}', '{self.date_reported}')"
