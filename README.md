@@ -1,4 +1,6 @@
-# SafeTO
+<img src="https://raw.githubusercontent.com/Daniel-Persaud/WITM-Hackathon/main/safe_to/safeto/static/logo.png" width="50%" height="50%">
+
+## Problem
 After an increase in crime in Toronto, people need a better way to feel safe during their day to day lives.
 
 ## Our Solution
